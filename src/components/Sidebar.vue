@@ -2,15 +2,14 @@
     <v-navigation-drawer
       app
       permanent
-      :mini-variant="mini"
-      width="240"
-      @mouseenter="mini = false"
-      @mouseleave="mini = true"
+      
+      width="300"
+
     >
       <v-list>
         <v-list-item>
-          <v-list-item-content v-if="!mini">
-            <v-list-item-title class="text-h6 font-weight-bold">FALAVINHA NEXT</v-list-item-title>
+          <v-list-item-content >
+            <v-list-item-title class="text-h6 font-weight-bold text-PrimaryFalavinha">FALAVINHA NEXT</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider />
@@ -19,11 +18,16 @@
           :key="item.title"
           :to="item.to"
           link
+          class="d-flex flex-row"
+
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+          
+          <div class="d-flex pa-4 pl-1">
+            <v-list-item-icon class="px-4">
+            <v-icon class="text-PrimaryFalavinha">{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title v-if="!mini">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class="text-PrimaryFalavinha">{{ item.title }}</v-list-item-title>
+          </div>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -35,9 +39,11 @@
   
   const mini = ref(false)
   const items = [
-    { title: 'Jobs', icon: 'mdi-briefcase', to: '/' },
-    { title: 'Companies', icon: 'mdi-domain', to: '/companies' },
-    { title: 'Salaries', icon: 'mdi-currency-usd', to: '/salaries' },
-    { title: 'Career paths', icon: 'mdi-trending-up', to: '/paths' }
+    { title: 'Vagas', icon: 'mdi-briefcase', to: '/' },
+    { title: 'Por que nos escolher?', icon: 'mdi mdi-heart-multiple', to: '/reasons' },
+    { title: 'Sobre nós', icon: 'mdi-information', to: '/about' },
+    { title: 'Dashboards', icon: 'mdi mdi-chart-pie', to: '/dashboards' },
+    { title: 'Resultados', icon: 'mdi-rocket-launch', to: '/results' },
+    { title: 'Banco de Talentos', icon: 'mdi mdi-thought-bubble', to: '/talents' },
   ]
   </script>
