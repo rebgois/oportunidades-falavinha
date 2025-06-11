@@ -1,12 +1,12 @@
 <template>
     <Layout>
       <!-- Hero Banner -->
-      <v-card class="rounded-lg mb-8" elevation="2">
+      <v-card class="rounded-xl mb-8" elevation="2">
         <v-img src="https://source.unsplash.com/collection/190727/1200x400" height="300px">
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-col cols="12" class="text-center">
               <h2 class="white--text text-h4 font-weight-bold">Encontre seu próximo passo para a evolução</h2>
-              <v-btn color="primary" large class="mt-4">Ver Vagas</v-btn>
+              <v-btn color="PrimaryFalavinha" large class="mt-4 text-none inter-normal">Ver Vagas</v-btn>
             </v-col>
           </v-row>
         </v-img>
@@ -22,7 +22,7 @@
       <!-- Job Cards Grid -->
       <v-row dense>
         <v-col v-for="job in pagedJobs" :key="job.id" cols="12" sm="6" md="4" class="d-flex">
-          <v-card class="flex-grow-1" elevation="2">
+          <v-card class="flex-grow-1 rounded-xl" elevation="2">
             <v-card-title class="font-weight-bold">{{ job.title }}</v-card-title>
             <v-card-subtitle>{{ job.company }} • {{ job.location }}</v-card-subtitle>
             <v-divider class="my-2" />

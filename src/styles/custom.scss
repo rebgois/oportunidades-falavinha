@@ -1,0 +1,78 @@
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.econet-dark-blue {
+  background-color: #264460 !important;
+}
+.econet-semi-dark-blue {
+  background-color: #0d54bc !important;
+}
+.econet-darker-blue {
+  background-color: #2d5071 !important;
+}
+.vertical-mirror {
+  transform: scaleX(-1);
+}
+.weak-blue {
+  background-color: #e6effa !important;
+}
+.red {
+  color: red;
+}
+.black {
+  color: black;
+}
+.light-blue {
+  background-color: #e6effa !important;
+}
+.light-blue-hover:hover {
+  background-color: #e6effa !important;
+}
+.light-blue-hover-open:hover {
+  background-color: #01408d !important;
+}
+.darker-blue {
+  background-color: #01408d !important;
+}
+.darker-blue-font-hover:hover {
+  color: #0054bc !important;
+}
+.darker-blue-font {
+  color: #0054bc !important;
+}
+.darker-blue-font:hover {
+  background-color: #e6effa !important;
+}
+.blue-fill {
+  fill: #0054bc !important;
+}
+.black-fill {
+  fill: black !important;
+}
+.white-fill {
+  fill: white !important;
+}
+.grey-fill {
+  fill: #374151 !important;
+}
+.link-style {
+  text-decoration: none;
+  color: #1976d2;
+  cursor: pointer;
+}
+.link-style:hover {
+  color: #1565c0;
+  text-decoration: none;
+}
+.too-elevated {
+  z-index: 10000 !important;
+}
+.link-underline {
+  text-decoration: underline;
+}
+.grey-font {
+  color: #374151 !important;
+}

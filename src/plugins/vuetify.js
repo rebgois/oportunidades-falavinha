@@ -20,6 +20,7 @@ export default createVuetify({
           Processando: "#705100",
           Cancelado: "#CB3D29",
           Rejeitado: "#8A3200",
+          PrimaryFalavinha: "#145d61",
         },
       },
     },
