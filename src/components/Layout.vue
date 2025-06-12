@@ -1,8 +1,8 @@
 <template>
     <v-app>
       <Sidebar />
-      <v-main>
-        <v-container fluid>
+      <v-main class="bg-BgPadrao">
+        <v-container fluid >
           <slot />
         </v-container>
       </v-main>
