@@ -14,30 +14,9 @@
 
 <script setup>
 import { Line, Bar, Pie } from 'vue-chartjs'
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  BarElement,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-} from 'chart.js'
+import { Chart as ChartJS, registerables } from 'chart.js'
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  BarElement,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-)
+ChartJS.register(...registerables)
 
 const options = {
   responsive: true,
