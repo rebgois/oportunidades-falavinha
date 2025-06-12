@@ -1,7 +1,7 @@
 <template>
-    <Layout>
-      <!-- Hero Banner -->
-      <v-card class="rounded-xl mb-8 w-auto h-auto" elevation="2">
+  <Layout>
+    <!-- … Hero Banner e filtros … -->
+    <v-card class="rounded-xl mb-8 w-auto h-auto" elevation="2">
         <!-- <v-img  src="../assets/timeFalavinha.jpeg" width="100%" height="100%">
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-col cols="12" class="text-center">
@@ -11,47 +11,73 @@
           </v-row>
         </v-img> -->
       </v-card>
-      <!-- Search & Filters -->
-<v-card class="rounded-xl mb-8 w-auto h-auto pa-5" elevation="2">
 
-  <v-text-field v-model="search" prepend-inner-icon="mdi-magnify" label="Search for jobs" clearable outlined class="mb-4"/>
-      <v-chip-group v-model="selectedFilters" multiple class="mb-6">
-        <v-chip color="primary" variant="tonal">Nível</v-chip>
-        <v-chip color="primary" variant="tonal">Cidade</v-chip>
-        <v-chip color="primary" variant="tonal">Área</v-chip>
-        <v-chip color="primary" variant="tonal">Modelo</v-chip>
-      </v-chip-group>
-      <!-- Job Cards Grid -->
-      <v-row >
-        <v-col v-for="job in pagedJobs" :key="job.id" cols="12" sm="6" md="4" class="d-flex">
+      <Transition name="fade" mode="out-in" appear>
+      <div :key="page">
+        <v-row class="gap-6">
+          <v-col
+            v-for="job in pagedJobs"
+            :key="job.id"
+            cols="12" sm="6" md="4"
+            class="d-flex"
+          >
           <v-card class="flex-grow-1 rounded-xl bg-BgPadrao" elevation="2">
-            <v-card-title class="font-weight-bold text-PrimaryFalavinha">{{ job.cargo }}</v-card-title>
-            <v-card-subtitle>Falavinha Next • {{ job.localizacao }}</v-card-subtitle>
-            <v-divider class="my-2" />
-            <v-card-text>
-              <div><strong>Nível:</strong> <v-chip :color="getLevelColor(job.nivel)" variant="flat" density="compact">{{ job.nivel }}</v-chip>
-              </div>
-              <div><strong>Salário:</strong> R${{ job.salario.toLocaleString('pt-BR') }}</div>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer />
-             
-                 <RouterLink :to="`/vagas/${job.id}`" class="ml-auto">
-  <v-btn color="white" class="bg-PrimaryFalavinha text-none inter-normal rounded-xl">
-    Detalhes
-  </v-btn>
-</RouterLink>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-      <!-- Pagination -->
-      <v-row justify="center" class="mt-6">
-        <v-pagination v-model="page" :length="pageCount" circle color="primary"/>
-      </v-row>
-</v-card>
-    </Layout>
-  </template>
+          <v-card-title class="font-weight-bold text-PrimaryFalavinha">
+            {{ job.cargo }}
+          </v-card-title>
+          <v-card-subtitle>
+            Falavinha Next • {{ job.localizacao }}
+          </v-card-subtitle>
+          <v-divider class="my-2" />
+          <v-card-text>
+            <div>
+              <strong>Nível:</strong>
+              <v-chip
+                :color="getLevelColor(job.nivel)"
+                variant="flat"
+                density="compact"
+              >
+                {{ job.nivel }}
+              </v-chip>
+            </div>
+            <div>
+              <strong>Salário:</strong>
+              R$ {{ job.salario.toLocaleString('pt-BR') }}
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer />
+            <RouterLink :to="`/vagas/${job.id}`" class="ml-auto">
+              <v-btn
+                color="white"
+                class="bg-PrimaryFalavinha text-none inter-normal rounded-xl"
+              >
+                Detalhes
+              </v-btn>
+            </RouterLink>
+          </v-card-actions>
+        </v-card>
+          </v-col>
+        </v-row>
+      </div>
+    </Transition>
+
+    <v-row justify="center" class="mt-6">
+      <v-pagination v-model="page" :length="pageCount" circle color="primary"/>
+    </v-row>
+  </Layout>
+</template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease-in-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
   
   <script setup lang="js">
   import { ref, computed, onMounted } from 'vue'
@@ -97,3 +123,4 @@
     return 'grey'
   }
   </script>
+
