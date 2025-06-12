@@ -9,7 +9,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-content >
-            <v-list-item-title class="text-h6 font-weight-bold text-PrimaryFalavinha">FALAVINHA NEXT</v-list-item-title>
+           <img src="../assets/grupo-falavinha-next-logotipo.png"  class="d-inline-block align-top pa-4 ">
           </v-list-item-content>
         </v-list-item>
         <v-divider />
