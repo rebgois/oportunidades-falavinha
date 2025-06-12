@@ -28,6 +28,11 @@
             <li v-for="(a, i) in vaga.atribuicoes" :key="i">{{ a }}</li>
           </ul>
         </section>
+
+        <section class="mb-6">
+          <h3 class="text-subtitle-1 font-weight-bold mb-2">Painéis</h3>
+          <JobDashboards />
+        </section>
   
         <v-divider class="mb-6"/>
   
@@ -62,7 +67,8 @@
   import { ref, computed } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
   import { useVagasStore } from '@/stores/vagasStore'
-  import Layout from '@/components/Layout.vue'
+import Layout from '@/components/Layout.vue'
+import JobDashboards from '@/components/JobDashboards.vue'
   
   const route = useRoute()
   const router = useRouter()
