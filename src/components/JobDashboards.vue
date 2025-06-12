@@ -1,43 +1,22 @@
 <template>
   <div>
     <div class="chart-container">
-      <Line :data="growthData" :options="options" />
+      <Line :chart-data="growthData" :chart-options="options" />
     </div>
     <div class="chart-container mt-6">
-      <Bar :data="projectsData" :options="options" />
+      <Bar :chart-data="projectsData" :chart-options="options" />
     </div>
     <div class="chart-container mt-6">
-      <Pie :data="impactData" :options="options" />
+      <Pie :chart-data="impactData" :chart-options="options" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { Line, Bar, Pie } from 'vue-chartjs'
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  BarElement,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-} from 'chart.js'
+import { Chart as ChartJS, registerables } from 'chart.js'
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  BarElement,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-)
+ChartJS.register(...registerables)
 
 const options = {
   responsive: true,

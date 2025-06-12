@@ -1,6 +1,6 @@
 <template>
     <Layout>
-      <v-card class="mx-auto my-8 pa-6" max-width="700">
+      <v-card class="mx-auto my-8 pa-6" max-width="1000">
         <v-card-title class="text-h5 font-weight-bold">
           {{ vaga.cargo }} • {{ vaga.nivel }}
         </v-card-title>
@@ -10,34 +10,40 @@
   
         <v-divider class="mb-4"/>
   
-        <section class="mb-6">
-          <h3 class="text-subtitle-1 font-weight-bold mb-2">Descrição</h3>
-          <p>{{ vaga.descricao }}</p>
-        </section>
-  
-        <section class="mb-6">
-          <h3 class="text-subtitle-1 font-weight-bold mb-2">Requisitos</h3>
-          <ul>
-            <li v-for="(r, i) in vaga.requisitos" :key="i">{{ r }}</li>
-          </ul>
-        </section>
-  
-        <section class="mb-6">
-          <h3 class="text-subtitle-1 font-weight-bold mb-2">Atribuições</h3>
-          <ul>
-            <li v-for="(a, i) in vaga.atribuicoes" :key="i">{{ a }}</li>
-          </ul>
-        </section>
+        <v-row>
+          <v-col cols="12" md="6">
+            <section class="mb-6">
+              <h3 class="text-subtitle-1 font-weight-bold mb-2">Descrição</h3>
+              <p>{{ vaga.descricao }}</p>
+            </section>
 
-        <section class="mb-6">
-          <h3 class="text-subtitle-1 font-weight-bold mb-2">Painéis</h3>
-          <JobDashboards />
-        </section>
+            <section class="mb-6">
+              <h3 class="text-subtitle-1 font-weight-bold mb-2">Requisitos</h3>
+              <ul>
+                <li v-for="(r, i) in vaga.requisitos" :key="i">{{ r }}</li>
+              </ul>
+            </section>
+
+            <section class="mb-6">
+              <h3 class="text-subtitle-1 font-weight-bold mb-2">Atribuições</h3>
+              <ul>
+                <li v-for="(a, i) in vaga.atribuicoes" :key="i">{{ a }}</li>
+              </ul>
+            </section>
+          </v-col>
+
+          <v-col cols="12" md="6">
+            <section class="mb-6">
+              <h3 class="text-subtitle-1 font-weight-bold mb-2">Painéis</h3>
+              <JobDashboards />
+            </section>
+          </v-col>
+        </v-row>
   
         <v-divider class="mb-6"/>
   
         <h3 class="text-h6 font-weight-bold mb-4">Candidatar-se</h3>
-        <v-form @submit.prevent="enviarCandidatura" ref="form">
+        <v-form @submit.prevent="enviarCandidatura" ref="formRef">
           <v-text-field
             v-model="form.nome"
             label="Nome completo"
