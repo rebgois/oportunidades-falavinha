@@ -39,42 +39,7 @@
           md="6"
           class="d-flex flex-column justify-space-between"
         >
-          <v-form @submit.prevent="enviarCandidatura" ref="formRef">
-            <h3 class="text-h6 font-weight-bold mb-4">Candidatar-se</h3>
-            <v-text-field
-              v-model="form.nome"
-              placeholder="Nome completo"
-              variant="outlined"
-              density="compact"
-              required
-            />
-            <v-text-field
-              v-model="form.email"
-              placeholder="Seu melhor E-mail"
-              type="email"
-              required
-              variant="outlined"
-              density="compact"
-            />
-            <v-file-input
-              v-model="form.curriculo"
-              accept=".pdf"
-              prepend-icon="mdi-cloud-upload-outline"
-              label="Anexar Currículo (PDF)"
-              placeholder="Nenhum arquivo selecionado"
-              variant="outlined"
-              density="compact"
-              hide-details
-            />
-
-            <v-btn
-              type="submit"
-              color="PrimaryFalavinha"
-              class="mt-4 rounded-xl"
-            >
-              Enviar candidatura
-            </v-btn>
-          </v-form>
+          <SubscribeForm />
           <div class="text-center my-4">
             <v-icon
               class="bounce"
@@ -130,6 +95,7 @@ import JobDashboards from "@/components/JobDashboards.vue";
 import BarChart from "@/components/BarChart.vue";
 import LineChart from "@/components/LineChart.vue";
 import PieChart from "@/components/PieChart.vue";
+import SubscribeForm from "@/components/SubscribeForm.vue";
 
 const route = useRoute();
 const router = useRouter();
