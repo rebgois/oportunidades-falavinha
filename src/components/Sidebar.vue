@@ -40,8 +40,8 @@
   const mini = ref(false)
   const items = [
     { title: 'Vagas', icon: 'mdi-briefcase', to: '/' },
-    { title: 'Por que nos escolher?', icon: 'mdi mdi-heart-multiple', to: '/reasons' },
-    { title: 'Resultados', icon: 'mdi-rocket-launch', to: '/results' },
-    { title: 'Banco de Talentos', icon: 'mdi mdi-thought-bubble', to: '/talents' },
+    { title: 'Por que nos escolher?', icon: 'mdi mdi-heart-multiple', to: '/por-que-nos-escolher' },
+    { title: 'Resultados', icon: 'mdi-rocket-launch', to: '/resultados' },
+    { title: 'Banco de Talentos', icon: 'mdi mdi-thought-bubble', to: '/banco-de-talentos' },
   ]
   </script>

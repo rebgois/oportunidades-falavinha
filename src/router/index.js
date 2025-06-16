@@ -1,12 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import JobDetail from '@/views/JobDetail.vue'
+import HomeView from '@/views/HomeView.vue'
+// import OpenPositionsView from '@/views/OpenPositionsView.vue'
+import JobDetailView from '@/views/JobDetailView.vue'
+import WhyChooseUsView from '@/views/WhyChooseUsView.vue'
+import ResultsView from '@/views/ResultsView.vue'
+import TalentPoolView from '@/views/TalentPoolView.vue'
 
-export default createRouter({
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: HomeView
+  },
+  {
+    path: '/detalhes-da-vaga/:id',
+    name: 'JobDetail',
+    component: JobDetailView,
+    props: true
+  },
+  {
+    path: '/por-que-nos-escolher',
+    name: 'WhyChooseUs',
+    component: WhyChooseUsView
+  },
+  {
+    path: '/resultados',
+    name: 'Results',
+    component: ResultsView
+  },
+  {
+    path: '/banco-de-talentos',
+    name: 'TalentPool',
+    component: TalentPoolView
+  }
+]
+
+const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    { path: '/', name: 'Home', component: Home },
-    { path: '/vagas/:id', name: 'JobDetail', component: JobDetail, props: true }
-  ]
-  })
+  routes
+})
 
+export default router
