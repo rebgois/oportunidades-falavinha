@@ -13,7 +13,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/detalhes-da-vaga/:id',
+    path: '/vagas/:id',
     name: 'JobDetail',
     component: JobDetailView,
     props: true
