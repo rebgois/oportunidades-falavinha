@@ -1,7 +1,6 @@
 <template>
     <Layout>
       <v-container fluid class="py-10 inter-normal">
-        <!-- Hero Section with slide-down animation -->
         <v-slide-y-transition mode="in-out" appear>
           <v-row justify="center" class="mb-12">
             <v-col cols="12" md="8" class="text-center">
@@ -9,14 +8,12 @@
               <p class="subtitle-1 mt-2">
                 Ambiente colaborativo • Crescimento rápido de carreira • Diversidade e inovação
               </p>
-              <v-btn color="PrimaryFalavinha" class="mt-4 text-none" to="/">
+              <v-btn color="PrimaryFalavinha" class="mt-4 text-none rounded-xl" to="/">
                 Ver vagas abertas
               </v-btn>
             </v-col>
           </v-row>
         </v-slide-y-transition>
-  
-        <!-- KPIs with fade-in and hover scale -->
         <v-fade-transition mode="in-out" appear>
           <v-row class="my-12" justify="center" dense>
             <v-col cols="6" sm="3" v-for="(item, i) in kpis" :key="i">
@@ -28,8 +25,6 @@
             </v-col>
           </v-row>
         </v-fade-transition>
-  
-        <!-- Glassdoor Metrics slide-up -->
         <v-fade-transition mode="in-out" appear>
           <v-row class="my-12" justify="center" dense>
             <v-col cols="12">
@@ -37,7 +32,6 @@
                 Dados de avaliação extraídos do Glassdoor
               </div>
             </v-col>
-            <!-- Glassdoor detailed rating -->
             <v-col cols="12">
               <v-card flat class="mb-6 pa-6 glassdoor-summary text-center">
                 <h2 class="subtitle-1 font-weight-bold mb-2">Avaliações da empresa Falavinha Next</h2>
@@ -72,8 +66,6 @@
             </v-col>
           </v-row>
         </v-fade-transition>
-  
-        <!-- Culture & Values slide-left -->
         <v-slide-x-transition mode="in-out" appear>
           <v-row class="my-12">
             <v-col cols="12" md="6">
@@ -115,8 +107,6 @@
             </v-col>
           </v-row>
         </v-slide-x-reverse-transition>
-  
-        <!-- Testimonials fade-in carousel auto-cycle -->
         <v-fade-transition mode="in-out" appear>
           <v-row class="my-12">
             <v-col cols="12">
@@ -139,7 +129,7 @@
             <v-col cols="12" md="6" class="text-center">
               <v-card class="pa-10 rounded-xl hover-scale">
                 <h2 class="title font-weight-bold">Pronto para se juntar à Falavinha Next?</h2>
-                <v-btn color="PrimaryFalavinha" large class="mt-4 text-none" to="/">
+                <v-btn color="PrimaryFalavinha" large class="mt-4 text-none rounded-xl" to="/">
                   Ver vagas abertas
                 </v-btn>
               </v-card>
