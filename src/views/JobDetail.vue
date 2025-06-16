@@ -1,3 +1,5 @@
+
+<!--  JobDetail.vue -->
 <template>
   <Layout>
     <v-card class="rounded-xl mx-auto my-8 pa-6">
@@ -55,16 +57,15 @@
               density="compact"
             />
             <v-file-input
-  v-model="form.curriculo"
-  accept=".pdf"
-  prepend-icon="mdi-cloud-upload-outline"
-  label="Anexar Currículo (PDF)"
-  placeholder="Nenhum arquivo selecionado"
-  variant="outlined"
-  density="compact"
-
-  hide-details
-/>
+              v-model="form.curriculo"
+              accept=".pdf"
+              prepend-icon="mdi-cloud-upload-outline"
+              label="Anexar Currículo (PDF)"
+              placeholder="Nenhum arquivo selecionado"
+              variant="outlined"
+              density="compact"
+              hide-details
+            />
 
             <v-btn
               type="submit"
@@ -85,12 +86,37 @@
         </v-col>
         <v-divider class="mb-6" />
       </v-row>
-      <v-row class="w-100 justify-center">
-        <section class="mb-6">
-          <h3 class="text-subtitle-1 font-weight-bold mb-2">Painéis</h3>
-          <JobDashboards class="dashboards" />
-        </section>
-      </v-row>
+      <v-card class="overflow-hidden">
+  <v-row align="stretch">
+    <!-- Bar -->
+    <v-col cols="12" md="4" class="d-flex">
+      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
+        <div style="position:relative; flex:1">
+          <BarChart />
+        </div>
+      </v-card>
+    </v-col>
+
+    <!-- Line -->
+    <v-col cols="12" md="4" class="d-flex">
+      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
+        <div style="position:relative; flex:1">
+          <LineChart />
+        </div>
+      </v-card>
+    </v-col>
+
+    <!-- Pie -->
+    <v-col cols="12" md="4" class="d-flex">
+      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
+        <div style="position:relative; flex:1">
+          <PieChart />
+        </div>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-card>
+
     </v-card>
   </Layout>
 </template>
@@ -101,6 +127,9 @@ import { useRoute, useRouter } from "vue-router";
 import { useVagasStore } from "@/stores/vagasStore";
 import Layout from "@/components/Layout.vue";
 import JobDashboards from "@/components/JobDashboards.vue";
+import BarChart from "@/components/BarChart.vue";
+import LineChart from "@/components/LineChart.vue";
+import PieChart from "@/components/PieChart.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -127,9 +156,12 @@ function enviarCandidatura() {
 </script>
 
 <style scoped lang="css">
-.dashboards {
-  width: 100%;
-  max-height: 33vh;
+
+
+.linha-dashboards {
+  max-height: 20vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .bounce {
