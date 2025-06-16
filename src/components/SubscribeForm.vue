@@ -1,6 +1,6 @@
 <template>
     <v-card class="mx-auto my-8 pa-6 bg-BgPadrao border-sm border-BorderCardGeral fill-height d-flex flex-column" max-width="50vw">
-      <v-card-title class="text-h6 font-weight-bold text-PrimaryFalavinha">Candidatar-se para a vaga</v-card-title>
+      <v-card-title class="text-h6 font-weight-bold text-PrimaryFalavinha">Candidatar-se</v-card-title>
   
       <v-form ref="formRef" v-model="valid" lazy-validation>
         <v-row dense>
