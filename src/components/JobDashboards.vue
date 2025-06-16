@@ -48,12 +48,13 @@ const growthData = {
 };
 
 const projectsData = {
-  labels: ["2020", "2021", "2022", "2023"],
+  labels: [ "2020","2021", "2022", "2023"],
   datasets: [
     {
       label: "Projetos Entregues",
       backgroundColor: "#145d61",
-      data: [2, 5, 8, 12],
+      borderRadius: 20,
+      data: [2,5, 8, 12],
     },
   ],
 };
@@ -62,9 +63,9 @@ const impactData = {
   labels: ["Baixo", "Médio", "Alto"],
   datasets: [
     {
-      label: "Impacto",
-      backgroundColor: ["#145d61", "#fdd835", "#e65100"],
-      data: [20, 40, 40],
+      label: "Satisfação dos funcionários",
+      backgroundColor: ["#9ca3af","#f08718", "#07b864"],
+      data: [4, 34, 62],
     },
   ],
 };

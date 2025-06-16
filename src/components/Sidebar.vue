@@ -41,7 +41,6 @@
   const items = [
     { title: 'Vagas', icon: 'mdi-briefcase', to: '/' },
     { title: 'Por que nos escolher?', icon: 'mdi mdi-heart-multiple', to: '/reasons' },
-    { title: 'Dashboards', icon: 'mdi mdi-chart-pie', to: '/dashboards' },
     { title: 'Resultados', icon: 'mdi-rocket-launch', to: '/results' },
     { title: 'Banco de Talentos', icon: 'mdi mdi-thought-bubble', to: '/talents' },
   ]
