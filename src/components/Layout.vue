@@ -18,8 +18,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useDisplay } from 'vuetify'
 import Sidebar from '@/components/Sidebar.vue'
 
-const drawer = ref(false)
+const { smAndDown } = useDisplay()
+const drawer = ref(!smAndDown.value)
+
+watch(smAndDown, (val) => {
+  drawer.value = !val
+})
 </script>
