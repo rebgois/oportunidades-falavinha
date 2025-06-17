@@ -28,7 +28,8 @@
           clearable
           variant="outlined"
           density="comfortable"
-          class="rounded-xl w-100 text-PrimaryFalavinha"
+          rounded
+          class="text-PrimaryFalavinha"
         />
       </v-col>
     </v-row>
