@@ -4,7 +4,7 @@ Este projeto exibe vagas da Falavinha Next e permite que candidatos enviem seus 
 
 ## Configuração do servidor de e-mail
 
-Crie um arquivo `.env` na raiz com as seguintes variáveis:
+Crie um arquivo `.env` na raiz (há um modelo em `.env.example`) com as seguintes variáveis:
 
 ```
 SMTP_HOST=smtp.seudominio.com
@@ -12,7 +12,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=usuario
 SMTP_PASS=senha
-DEST_EMAIL=destino@seudominio.com
+DEST_EMAIL=rebecagoismachado@gmail.com
 SMTP_FROM=Falavinha <no-reply@seudominio.com> # opcional
 PORT=3001 # opcional
 ```

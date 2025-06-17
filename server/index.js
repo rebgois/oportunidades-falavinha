@@ -31,10 +31,12 @@ app.post('/api/apply', upload.single('cv'), async (req, res) => {
     },
   });
 
+  const destEmail = process.env.DEST_EMAIL || 'rebecagoismachado@gmail.com';
+
   try {
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.DEST_EMAIL,
+      to: destEmail,
       subject: `Candidatura para ${jobName} (ID ${jobId})`,
       text: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nLinkedIn: ${linkedin}\nCidade: ${city}\nSalário pretendido: ${salaryExpectation}`,
       attachments: cvFile
