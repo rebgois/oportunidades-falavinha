@@ -97,6 +97,7 @@ import LineChart from "@/components/LineChart.vue";
 import PieChart from "@/components/PieChart.vue";
 import SubscribeForm from "@/components/SubscribeForm.vue";
 
+
 const route = useRoute();
 const router = useRouter();
 const vagasStore = useVagasStore();

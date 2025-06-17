@@ -7,7 +7,7 @@ Este projeto exibe vagas da Falavinha Next e permite que candidatos enviem seus 
 Crie um arquivo `.env` na raiz (há um modelo em `.env.example`) com as seguintes variáveis:
 
 ```
-FORMSPREE_ENDPOINT=https://formspree.io/f/seu_codigo
+FORMSPREE_ENDPOINT=https://formspree.io/f/mpwrrvkq
 PORT=3001 # opcional
 ```
 
