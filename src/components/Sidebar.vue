@@ -1,5 +1,11 @@
 <template>
-  <v-navigation-drawer app permanent width="300">
+  <v-navigation-drawer
+    v-model="drawer"
+    app
+    :permanent="!smAndDown"
+    :temporary="smAndDown"
+    width="300"
+  >
     <v-list>
       <v-list-item>
         <v-list-item-content>
@@ -31,10 +37,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { computed } from "vue";
+import { useDisplay } from "vuetify";
 
-const mini = ref(false);
+const props = defineProps({
+  modelValue: Boolean,
+});
+const emit = defineEmits(["update:modelValue"]);
+
+const drawer = computed({
+  get: () => props.modelValue,
+  set: (val) => emit("update:modelValue", val),
+});
+
+const { smAndDown } = useDisplay();
 const items = [
   { title: "Vagas", icon: "mdi-briefcase", to: "/" },
   {

@@ -31,7 +31,7 @@
               <li class="text-TextGrey" v-for="(a, i) in vaga.atribuicoes" :key="i">{{ a }}</li>
             </ul>
           </section>
-          <div class="text-center my-4">
+          <div class="text-center py-4">
             <v-icon
               class="bounce"
               color="PrimaryFalavinha"
@@ -42,9 +42,9 @@
         </v-col>
         
         <v-col
-          cols="12"
+          cols="12 justify-xl-center"
           md="6"
-          class="d-flex flex-column justify-space-between"
+          class="d-flex flex-column"
         >
           <SubscribeForm :job-id="vaga.id" :job-name="`${vaga.cargo} • ${vaga.nivel}`" />
 
