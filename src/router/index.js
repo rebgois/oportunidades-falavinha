@@ -1,43 +1,38 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-// import OpenPositionsView from '@/views/OpenPositionsView.vue'
-import JobDetailView from '@/views/JobDetailView.vue'
-import WhyChooseUsView from '@/views/WhyChooseUsView.vue'
-import ResultsView from '@/views/ResultsView.vue'
-import TalentPoolView from '@/views/TalentPoolView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "@/views/HomeView.vue";
+
+import JobDetailView from "@/views/JobDetailView.vue";
+import WhyChooseUsView from "@/views/WhyChooseUsView.vue";
+
+import TalentPoolView from "@/views/TalentPoolView.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: HomeView
+    path: "/",
+    name: "Home",
+    component: HomeView,
   },
   {
-    path: '/vagas/:id',
-    name: 'JobDetail',
+    path: "/vagas/:id",
+    name: "JobDetail",
     component: JobDetailView,
-    props: true
+    props: true,
   },
   {
-    path: '/por-que-nos-escolher',
-    name: 'WhyChooseUs',
-    component: WhyChooseUsView
+    path: "/por-que-nos-escolher",
+    name: "WhyChooseUs",
+    component: WhyChooseUsView,
   },
   {
-    path: '/resultados',
-    name: 'Results',
-    component: ResultsView
+    path: "/banco-de-talentos",
+    name: "TalentPool",
+    component: TalentPoolView,
   },
-  {
-    path: '/banco-de-talentos',
-    name: 'TalentPool',
-    component: TalentPoolView
-  }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
