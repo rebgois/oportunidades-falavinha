@@ -19,6 +19,19 @@
         />
       </div>
     </v-card>
+    <v-row class="mb-6" justify="center">
+      <v-col cols="12" md="12">
+        <v-text-field
+          v-model="search"
+          placeholder="Filtrar vagas por palavra-chave"
+          prepend-inner-icon="mdi-magnify"
+          clearable
+          variant="outlined"
+          density="comfortable"
+          class="rounded-xl w-100 text-PrimaryFalavinha"
+        />
+      </v-col>
+    </v-row>
     <Transition name="fade" mode="out-in" appear>
       <div :key="page">
         <v-row class="gap-6">
@@ -71,8 +84,8 @@
       </div>
     </Transition>
 
-    <v-row justify="center" class="mt-6">
-      <v-pagination v-model="page" :length="pageCount" circle color="primary" />
+    <v-row justify="center" class="mt-6 mb-5">
+      <v-pagination v-model="page" :length="pageCount" rounded color="PrimaryFalavinha" />
     </v-row>
   </Layout>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto my-8 pa-6 bg-BgPadrao border-sm border-BorderCardGeral fill-height d-flex flex-column"
-    max-width="50vw"
+    max-width="45vw"
   >
     <v-card-title class="text-h6 font-weight-bold text-PrimaryFalavinha"
       >Candidatar-se</v-card-title
@@ -120,7 +120,7 @@
         >
       </div>
 
-      <v-row justify="end" class="mt-6 justify-sm-space-around">
+      <v-row justify="end" class="mt-6 justify-sm-space-around mb-4">
         <v-btn class="text-none rounded-xl" text @click="resetForm"
           >Limpar</v-btn
         >
@@ -147,26 +147,13 @@ const valid = ref(false);
 const form = ref({
   name: "",
   email: "",
-  countryCode: "+55",
   phone: "",
   linkedin: "",
-  country: "",
   city: "",
   cv: null,
   salaryExpectation: "",
 });
 
-const countryCodes = [
-  { text: "🇧🇷 +55", value: "+55" },
-  { text: "🇺🇸 +1", value: "+1" },
-];
-const countries = [
-  "Brasil",
-  "Argentina",
-  "Chile",
-  "Colômbia",
-  "Estados Unidos",
-];
 
 const rules = {
   required: (v) => !!v || "Campo obrigatório.",
