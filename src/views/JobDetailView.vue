@@ -1,5 +1,3 @@
-
-<!--  JobDetail.vue -->
 <template>
   <Layout>
     <v-card class="rounded-xl mx-auto my-8 pa-6">
@@ -52,36 +50,38 @@
         <v-divider class="mb-6" />
       </v-row>
       <v-card class="overflow-hidden">
-  <v-row align="stretch">
-    <!-- Bar -->
-    <v-col cols="12" md="4" class="d-flex">
-      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
-        <div style="position:relative; flex:1">
-          <BarChart />
-        </div>
-      </v-card>
-    </v-col>
+        <v-row align="stretch">
+          <v-col cols="12" md="4" class="d-flex">
+            <v-card
+              class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column"
+            >
+              <div style="position: relative; flex: 1">
+                <BarChart />
+              </div>
+            </v-card>
+          </v-col>
 
-    <!-- Line -->
-    <v-col cols="12" md="4" class="d-flex">
-      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
-        <div style="position:relative; flex:1">
-          <LineChart />
-        </div>
-      </v-card>
-    </v-col>
+          <v-col cols="12" md="4" class="d-flex">
+            <v-card
+              class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column"
+            >
+              <div style="position: relative; flex: 1">
+                <LineChart />
+              </div>
+            </v-card>
+          </v-col>
 
-    <!-- Pie -->
-    <v-col cols="12" md="4" class="d-flex">
-      <v-card class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column">
-        <div style="position:relative; flex:1">
-          <PieChart />
-        </div>
+          <v-col cols="12" md="4" class="d-flex">
+            <v-card
+              class="pa-4 rounded-xl bg-CardBg border-sm border-BorderCardGeral fill-height d-flex flex-column"
+            >
+              <div style="position: relative; flex: 1">
+                <PieChart />
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-card>
-    </v-col>
-  </v-row>
-</v-card>
-
     </v-card>
   </Layout>
 </template>
@@ -114,7 +114,7 @@ const formRef = ref(null);
 
 function enviarCandidatura() {
   if (!formRef.value.validate()) return;
-  // aqui você mandaria pro backend ou serviço de e-mail
+  // aqui eu mandaria pro backend ou serviço de e-mail
   console.log("Dados enviados:", form.value);
   alert("Candidatura enviada com sucesso!");
   router.push("/"); // volta pra lista
@@ -122,8 +122,6 @@ function enviarCandidatura() {
 </script>
 
 <style scoped lang="css">
-
-
 .linha-dashboards {
   max-height: 20vh;
   display: flex;
