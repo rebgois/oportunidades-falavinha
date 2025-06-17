@@ -13,7 +13,7 @@
         </v-row>
       </v-slide-y-transition>
 
-      <SubscribeForm class="bg-BgView" />
+      <SubscribeForm class="bg-BgView" job-name="Banco de Talentos" />
       <v-scale-transition mode="in-out" appear>
         <v-row justify="center" class="my-12">
           <v-col cols="12" md="6" class="text-center">

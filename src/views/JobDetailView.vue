@@ -37,7 +37,7 @@
           md="6"
           class="d-flex flex-column justify-space-between"
         >
-          <SubscribeForm />
+          <SubscribeForm :job-id="vaga.id" :job-name="`${vaga.cargo} • ${vaga.nivel}`" />
           <div class="text-center my-4">
             <v-icon
               class="bounce"

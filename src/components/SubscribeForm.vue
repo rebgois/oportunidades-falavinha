@@ -140,7 +140,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
+
+const props = defineProps({
+  jobId: { type: Number, default: null },
+  jobName: { type: String, default: "Banco de Talentos" },
+});
 
 const formRef = ref(null);
 const valid = ref(false);
@@ -180,8 +185,21 @@ function resetForm() {
 
 function submit() {
   if (!formRef.value.validate()) return;
-  alert("Candidatura enviada com sucesso!");
-  resetForm();
+  const formData = new FormData();
+  Object.entries(form.value).forEach(([k, v]) => formData.append(k, v));
+  formData.append('jobId', props.jobId);
+  formData.append('jobName', props.jobName);
+
+  fetch('/api/apply', { method: 'POST', body: formData })
+    .then((r) => {
+      if (!r.ok) throw new Error('Falha ao enviar');
+      alert('Candidatura enviada com sucesso!');
+      resetForm();
+    })
+    .catch((e) => {
+      console.error(e);
+      alert('Erro ao enviar candidatura.');
+    });
 }
 </script>
 
