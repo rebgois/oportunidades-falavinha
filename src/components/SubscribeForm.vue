@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="mx-auto my-8 pa-6 bg-BgPadrao border-sm border-BorderCardGeral fill-height d-flexflex-column"
+    class="mx-auto my-8 pa-6 bg-BgPadrao border-sm border-BorderCardGeral fill-height d-flex flex-column"
   >
     <v-card-title class="text-h6 font-weight-bold text-PrimaryFalavinha"
       >Candidatar-se para a vaga</v-card-title

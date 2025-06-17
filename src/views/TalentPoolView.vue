@@ -2,7 +2,7 @@
   <Layout>
     <v-container fluid class="py-10 inter-normal">
       <v-slide-y-transition mode="in-out" appear>
-        <v-row justify="center" class="mb-12">
+        <v-row justify="center" class="mb-2">
           <v-col cols="12" md="8" class="text-center">
             <h1 class="display-1 font-weight-bold text-PrimaryFalavinha">Não encontrou a vaga dos seus sonhos?</h1>
             <p class="subtitle-1 mt-2 text-TextGrey">
@@ -13,7 +13,13 @@
         </v-row>
       </v-slide-y-transition>
 
-      <SubscribeForm class="bg-BgView w-50" job-name="Banco de Talentos" />
+      <v-container>
+  <v-row justify="center">
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+      <SubscribeForm class="bg-BgView" job-name="Banco de Talentos" />
+    </v-col>
+  </v-row>
+</v-container>
       <v-scale-transition mode="in-out" appear>
         <v-row justify="center" class="my-12">
           <v-col cols="12" md="6" class="text-center">
