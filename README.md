@@ -4,6 +4,8 @@ Este projeto exibe vagas da Falavinha Next e permite que candidatos enviem seus 
 
 ## Configuração do servidor
 
+Link da aplicação: https://oportunidades-falavinha.vercel.app/
+
 Crie um arquivo `.env` na raiz (há um modelo em `.env.example`) com as seguintes variáveis:
 
 ```
